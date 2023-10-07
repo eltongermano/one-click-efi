@@ -152,7 +152,7 @@ var RestartIntoFirmwareDialog = GObject.registerClass(
         }
 
         _rebootIntoFirmware() {
-            GLib.spawn_command_line_async("systemctl reboot --firmware");
+            GLib.spawn_command_line_async("efibootmgr -b 0001 && reboot");
         }
 
         _stopTimer() {
